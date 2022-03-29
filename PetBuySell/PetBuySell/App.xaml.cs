@@ -10,6 +10,7 @@ namespace PetBuySell
         {
             InitializeComponent();
 
+
             MainPage = new MainPage();
         }
 
