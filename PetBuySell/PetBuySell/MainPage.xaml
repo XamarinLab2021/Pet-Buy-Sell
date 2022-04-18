@@ -61,76 +61,73 @@
         <BoxView Grid.Row="1" 
                  Color="#929292" />
 
-        <Frame
-            Grid.Row="1"
-            BackgroundColor="#555353"
-            VerticalOptions="Start"
-            HorizontalOptions="Center"
-            WidthRequest="350"
-            HeightRequest="110"
-            Margin="10"
-            Padding="0"
-            CornerRadius="10">
+        <ListView x:Name="petsListView" Grid.Row="1" RowHeight="130" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
 
+                        <Grid RowSpacing="0"
+                                   ColumnSpacing="10"
+                                   BackgroundColor="#555353"
+                                   WidthRequest="350"
+                                   HeightRequest="110"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="Center"
+                                   Margin="10,10,10,0"
+                                   Padding="0">
 
-            <Grid RowSpacing="0"
-                  ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="30" />
-                </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="140"/>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
+                            <Image 
+                                     Grid.Column="0"
+                                     Grid.RowSpan="3"
+                                     Source="{Binding Image}"
+                                     Aspect="Fill" 
+                                     HorizontalOptions="Start" 
+                                     VerticalOptions="Center" 
+                                     WidthRequest="140" 
+                                     HeightRequest="110" />
 
-                <Image 
-                       Grid.Column="0"
-                       Grid.RowSpan="3"
-                       Source="Bulldog" 
-                       Aspect="Fill" 
-                       HorizontalOptions="Start" 
-                       VerticalOptions="Center" 
-                       WidthRequest="140" 
-                       HeightRequest="110" />
+                            <Label 
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 Text="{Binding Name}"
+                                 FontSize="Large"
+                                 FontAttributes="Bold"
+                                 TextColor="White"
+                                 HorizontalTextAlignment="Start" 
+                                 VerticalTextAlignment="Start"/>
 
-                <Label 
-                       Grid.Column="1"
-                       Grid.Row="0"
-                       Text="Bulldog"
-                       FontSize="Large"
-                       FontAttributes="Bold"
-                       TextColor="White"
-                       HorizontalTextAlignment="Start" 
-                       VerticalTextAlignment="Start"/>
+                            <Label 
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 Text="{Binding Locality}"
+                                 FontSize="Subtitle"
+                                 TextColor="#B0B0B0"
+                                 HorizontalTextAlignment="Start" 
+                                 VerticalTextAlignment="End"/>
 
-                <Label 
-                       Grid.Column="1"
-                       Grid.Row="1"
-                       Text="Žilina"
-                       FontSize="Subtitle"
-                       TextColor="#B0B0B0"
-                       HorizontalTextAlignment="Start" 
-                       VerticalTextAlignment="End"/>
-
-                <Label 
-                       Grid.Column="1"
-                       Grid.Row="2"
-                       Text="Cena: 58€"
-                       FontSize="Medium"
-                       TextColor="White"
-                       HorizontalTextAlignment="Start"
-                       VerticalTextAlignment="Center"/>
-
-
-            </Grid>
-
-        </Frame>
-
+                            <Label 
+                                 Grid.Column="1"
+                                 Grid.Row="2"
+                                 Text="{Binding Price}"
+                                 FontSize="Medium"
+                                 TextColor="White"
+                                 HorizontalTextAlignment="Start"
+                                 VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
-
-
 </ContentPage>

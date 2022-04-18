@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using PetBuySell.DataModels;
 
 namespace PetBuySell
 {
@@ -13,11 +14,22 @@ namespace PetBuySell
         public MainPage()
         {
             InitializeComponent();
+
+            List<Pet> petsList = new List<Pet>
+            {
+                new Pet{Name = "Bulldog", Price = "50€", Locality = "Čadca", Image = "bulldog" },
+            new Pet { Name = "Pes", Price = "50€", Locality = "Čadca", Image = "bulldog" },
+            };
+            petsListView.ItemsSource = petsList;
+          
+
         }
 
         void BackButtonClicked(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }
