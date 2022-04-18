@@ -10,8 +10,7 @@ namespace PetBuySell
         {
             InitializeComponent();
 
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new SplashScreen());
         }
 
         protected override void OnStart()

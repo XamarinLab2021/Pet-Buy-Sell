@@ -18,10 +18,13 @@ namespace PetBuySell
             List<Pet> petsList = new List<Pet>
             {
                 new Pet{Name = "Bulldog", Price = "50€", Locality = "Čadca", Image = "bulldog" },
-            new Pet { Name = "Pes", Price = "50€", Locality = "Čadca", Image = "bulldog" },
+                new Pet { Name = "Pes", Price = "50€", Locality = "Čadca", Image = "bulldog" },
             };
+
             petsListView.ItemsSource = petsList;
-          
+
+            //OnPropertyChanged();
+
 
         }
 

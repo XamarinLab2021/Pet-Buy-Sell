@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PetBuySell.MainPage">
+             x:Class="PetBuySell.MainPage"
+             NavigationPage.HasNavigationBar="false">
 
 
     <Grid RowSpacing="0"
@@ -61,11 +62,11 @@
         <BoxView Grid.Row="1" 
                  Color="#929292" />
 
-        <ListView x:Name="petsListView" Grid.Row="1" RowHeight="130" >
+        <ListView x:Name="petsListView" Grid.Row="1" RowHeight="130" SelectionMode="None"  ItemTapped="BackButtonClicked">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-
+                        
                         <Grid RowSpacing="0"
                                    ColumnSpacing="10"
                                    BackgroundColor="#555353"
