@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using PetBuySell.View;
 
 namespace PetBuySell
 {
@@ -34,7 +35,7 @@ namespace PetBuySell
             base.OnAppearing();
             await splashImage.ScaleTo(0.8, 1500, Easing.Linear);
             await splashImage.ScaleTo(1, 1500, Easing.Linear);
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current.MainPage = new NavigationPage(new Inzerat());
 
         }
     }

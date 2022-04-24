@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetBuySell.View.Inzerat"
+             NavigationPage.HasNavigationBar="false">
+
+    <Grid RowSpacing="0"
+          ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <BoxView  Grid.Row="0" 
+                  Color="#6F6F6F" />
+
+        <Frame HorizontalOptions="End"
+               WidthRequest="300"
+               CornerRadius="50"
+               Margin="12"
+               Padding="0">
+
+            <SearchBar 
+               Grid.Row="0" 
+               BackgroundColor="#868484"
+               Placeholder="Vyhľadávanie"
+               CancelButtonColor="White"
+               PlaceholderColor="White"
+               TextColor="White"
+               TextTransform="Lowercase"
+               HorizontalTextAlignment="Start"
+               FontSize="Medium"
+               FontAttributes="Italic" />
+
+        </Frame>
+
+        <Frame HorizontalOptions="Start"
+               VerticalOptions="Center"
+               WidthRequest="45"
+               HeightRequest="20"
+               Margin="0"
+               Padding="0"
+               BackgroundColor="Transparent">
+
+            <ImageButton  
+                Source="BackButton"
+                BackgroundColor="Transparent"
+                Clicked="BackButtonClicked" />
+
+        </Frame>
+
+
+        <BoxView Grid.Row="1" 
+                 Color="#929292" />
+        
+        <BoxView Grid.Row="2" 
+                 Color="#929292" />
+
+
+        <ListView x:Name="inzeratView" Grid.Row="1" SelectionMode="None"  ItemTapped="BackButtonClicked" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid  RowSpacing="0"
+                               ColumnSpacing="0"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               Margin="0,15,0,0"
+                               Padding="0,0,0,0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="190" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Row="0"
+                                   Grid.Column="1"
+                                   Source="{Binding Image}" />
+
+                            <ImageButton Grid.Column="0" Grid.Row="0" Source="BackButton" BackgroundColor="Transparent" Scale="0.5" />
+                            <ImageButton Grid.Column="2" Grid.Row="0" Source="BackButton" BackgroundColor="Transparent" Scale="0.5" Rotation="180"/>
+
+                            <Label
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="3"
+                                   Text="{Binding Name}"
+                                   FontSize="Large"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Start" 
+                                   VerticalTextAlignment="Center" 
+                                   Padding="10,0,0,0"/>
+                            <Label
+                                   Grid.Row="2"
+                                   Grid.ColumnSpan="3"
+                                   Text="{Binding Price}"
+                                   FontSize="Medium"
+                                   FontAttributes="None"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Start" 
+                                   VerticalTextAlignment="Center" 
+                                   Padding="10,0,0,0"/>
+                            <Label
+                                   Grid.Row="3"
+                                   Grid.ColumnSpan="3"
+                                   Text="{Binding Locality}"
+                                   FontSize="Medium"
+                                   FontAttributes="None"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Start" 
+                                   VerticalTextAlignment="Center" 
+                                   Padding="10,0,0,0"/>
+                            <Label
+                                   Grid.Row="4"
+                                   Grid.ColumnSpan="3"
+                                   Text="{Binding Description}"
+                                   FontSize="Medium"
+                                   FontAttributes="None"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Start" 
+                                   VerticalTextAlignment="Center" 
+                                   Padding="10,0,0,0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

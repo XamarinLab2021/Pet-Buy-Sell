@@ -1,36 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using PetBuySell.DataModels;
+using Xamarin.Forms.Xaml;
 using PetBuySell.Model;
+using PetBuySell.DataModels;
 
-namespace PetBuySell
+namespace PetBuySell.View
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Inzerat : ContentPage
     {
-        public MainPage()
+        public Inzerat()
         {
-           
             InitializeComponent();
-
             var PetsList = new PetsList();
             PetsList.AddPet(new Pet("Bulldog", "Dog", "5" + "€", "Žilina", "bulldog.png"));
-            petsListView.ItemsSource = PetsList.petsList;
-
-            //OnPropertyChanged();
-
+            inzeratView.ItemsSource = PetsList.petsList;
 
         }
-
         void BackButtonClicked(object sender, EventArgs e)
         {
-
+            Application.Current.MainPage = new NavigationPage(new MainPage());
         }
-
-
     }
 }

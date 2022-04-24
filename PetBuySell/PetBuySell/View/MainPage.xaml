@@ -62,12 +62,12 @@
         <BoxView Grid.Row="1" 
                  Color="#929292" />
 
-        <ListView x:Name="petsListView" Grid.Row="1" RowHeight="130" SelectionMode="None"  ItemTapped="BackButtonClicked">
+        <ListView x:Name="petsListView" Grid.Row="1" RowHeight="130" SelectionMode="None"  ItemTapped="BackButtonClicked" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         
-                        <Grid RowSpacing="0"
+                        <Grid      RowSpacing="0"
                                    ColumnSpacing="10"
                                    BackgroundColor="#555353"
                                    WidthRequest="350"

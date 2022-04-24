@@ -6,10 +6,20 @@ namespace PetBuySell.DataModels
 {
     internal class Pet
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Price { get; set; }
-        public string Locality { get; set; }
-        public string Image { get; set; }
+        public string Name { get; }
+        public string Description { get; }
+        public string Price { get; }
+        public string Locality { get; }
+        public string Image { get; }
+
+        public Pet(string petName, string petDescription, string petPrice, string petLocality, string petImage)
+        {
+            Name = petName;
+            Price = petPrice;
+            Description = petDescription;
+            Locality = petLocality;
+            Image = petImage;
+        }
+    
     }
 }
